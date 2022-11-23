@@ -1,5 +1,6 @@
 import unittest
-from unittest import TextTestRunner
+
+import HtmlTestRunner
 
 from lab_3.tests.test_contacts_form import TestContactsForm
 from lab_3.tests.test_login_form import TestLoginForm
@@ -18,5 +19,11 @@ if __name__ == '__main__':
         unittest.defaultTestLoader.loadTestsFromTestCase(TestContactsForm),
     ])
 
-    test_runner = TextTestRunner()
-    test_runner.run(test_suite)
+    html_runner = HtmlTestRunner.HTMLTestRunner(
+        combine_reports=True,
+        add_timestamp=True,
+        descriptions=False,
+        open_in_browser=True,
+    )
+
+    html_runner.run(test_suite)

@@ -7,7 +7,7 @@ from selenium.webdriver.common.by import By
 from lab_3.pages.contacts_page import ContactsPage
 
 
-class TestRegisterForm(unittest.TestCase):
+class TestContactsForm(unittest.TestCase):
     def setUp(self) -> None:
         self.driver = webdriver.Chrome()
         self.contacts_page = ContactsPage(self.driver)
